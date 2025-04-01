@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutureIA - Propulsez votre business avec l'IA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            background: linear-gradient(90deg, #FF6B6B, #4ECDC4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 1;
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000 70%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(79, 206, 196, 0.1) 0%, rgba(255, 107, 107, 0.1) 100%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+        
+        h1 {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #FF6B6B, #4ECDC4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            background: #FF6B6B;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 107, 107, 0.4);
+        }
+        
+        .section {
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 60px;
+            opacity: 0.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .mission-image {
+            position: relative;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        
+        .mission-text {
+            padding-right: 40px;
+        }
+        
+        .mission-text h3 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            background: linear-gradient(90deg, #FF6B6B, #4ECDC4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .mission-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .agent-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+        
+        .agent-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #FF6B6B, #4ECDC4);
+        }
+        
+        .agent-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(79, 206, 196, 0.3);
+        }
+        
+        .agent-image {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+        
+        .agent-name {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .agent-description {
+            font-size: 16px;
+            opacity: 0.8;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        
+        .testimonials {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+            padding: 100px 40px;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .testimonial-text {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            background: #333;
+        }
+        
+        .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .author-name {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .author-title {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        .pricing {
+            padding: 100px 40px;
+            background: #000;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card.featured {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(79, 206, 196, 0.3);
+            z-index: 2;
+        }
+        
+        .pricing-card.featured::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(79, 206, 196, 0.1) 0%, rgba(255, 107, 107, 0.1) 100%);
+            z-index: -1;
+        }
+        
+        .pricing-header {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .pricing-price {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .pricing-price span {
+            font-size: 18px;
+            opacity: 0.7;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .pricing-button {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #4ECDC4;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        .pricing-button:hover {
+            background: #4ECDC4;
+            color: #000;
+        }
+        
+        .featured .pricing-button {
+            background: linear-gradient(90deg, #FF6B6B, #4ECDC4);
+            border: none;
+        }
+        
+        .featured .pricing-button:hover {
+            opacity: 0.9;
+        }
+        
+        .footer {
+            background: #111;
+            padding: 60px 40px 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 600;
+            background: linear-gradient(90deg, #FF6B6B, #4ECDC4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .nav {
+                padding: 20px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            h1 {
+                font-size: 40px;
+            }
+            
+            .subtitle {
+                font-size: 20px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+            
+            .section-subtitle {
+                font-size: 18px;
+            }
+            
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .agents-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">FutureIA</div>
+        <div class="nav-links">
+            <a href="#mission">Notre Mission</a>
+            <a href="#agents">Agents IA</a>
+            <a href="#testimonials">Témoignages</a>
+            <a href="#pricing">Tarifs</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Révolutionnez votre business<br>avec l'intelligence artificielle</h1>
+            <p class="subtitle">Découvrez comment notre suite d'agents IA peut transformer votre entreprise, automatiser vos processus et multiplier votre croissance.</p>
+            <button class="cta-button">Découvrir nos solutions</button>
+        </div>
+    </section>
+    
+    <section class="section" id="mission">
+        <h2 class="section-title">Notre Mission</h2>
+        <p class="section-subtitle">Nous créons le futur du business où l'IA permet à chaque entreprise d'atteindre son plein potentiel.</p>
+        
+        <div class="mission-grid">
+            <div class="mission-image">
+                <img src="/api/placeholder/600/500" alt="Notre vision du futur" />
+            </div>
+            <div class="mission-text">
+                <h3>Pourquoi nous existons</h3>
+                <p>Chez FutureIA, nous croyons qu'une entreprise ne devrait jamais être limitée par ses ressources humaines. Notre vision est d'un monde où chaque entreprise peut avoir des employés idéaux, déléguer efficacement, automatiser intelligemment et se développer sans limites.</p>
+                <p>Nous sommes passionnés par la création de technologies qui libèrent les entrepreneurs et leurs équipes des tâches répétitives et chronophages, leur permettant de se concentrer sur ce qui compte vraiment : l'innovation, la stratégie et la croissance.</p>
+                <p>Notre mission est de démocratiser l'accès à l'intelligence artificielle pour que toutes les entreprises, quelle que soit leur taille, puissent bénéficier des avantages de l'IA pour transformer leur activité et prospérer dans l'économie numérique.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="agents">
+        <h2 class="section-title">Nos Agents IA</h2>
+        <p class="section-subtitle">Une suite complète d'assistants intelligents conçus pour propulser chaque aspect de votre business.</p>
+        
+        <div class="agents-grid">
+            <div class="agent-card">
+                <div class="agent-image">
+                    <img src="/api/placeholder/150/150" alt="Agent IA Conversationnel" />
+                </div>
+                <h3 class="agent-name">Agent IA Conversationnel</h3>
+                <p class="agent-description">Engagez vos clients 24/7 avec un assistant virtuel qui répond instantanément aux questions, résout les problèmes et convertit les prospects en clients.</p>
+                <button class="cta-button">En savoir plus</button>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-image">
+                    <img src="/api/placeholder/150/150" alt="Agent IA WhatsApp" />
+                </div>
+                <h3 class="agent-name">Agent IA WhatsApp</h3>
+                <p class="agent-description">Offrez une expérience client exceptionnelle sur WhatsApp avec un agent qui comprend le contexte, répond naturellement et guide vos clients vers la conversion.</p>
+                <button class="cta-button">En savoir plus</button>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-image">
+                    <img src="/api/placeholder/150/150" alt="Agent IA Mailing" />
+                </div>
+                <h3 class="agent-name">Agent IA Mailing</h3>
+                <p class="agent-description">Automatisez vos campagnes email avec un agent qui crée du contenu personnalisé, optimise les taux d'ouverture et adapte les messages selon le comportement des utilisateurs.</p>
+                <button class="cta-button">En savoir plus</button>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-image">
+                    <img src="/api/placeholder/150/150" alt="Agent IA Vocal" />
+                </div>
+                <h3 class="agent-name">Agent IA Vocal</h3>
+                <p class="agent-description">Transformez votre service client avec un assistant vocal qui comprend les nuances de la conversation humaine et résout les problèmes sans intervention humaine.</p>
+                <button class="cta-button">En savoir plus</button>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-image">
+                    <img src="/api/placeholder/150/150" alt="Agent IA Marketing" />
+                </div>
+                <h3 class="agent-name">Agent IA Marketing</h3>
+                <p class="agent-description">Générez du contenu optimisé pour les moteurs de recherche, créez des campagnes publicitaires performantes et analysez les données marketing pour maximiser votre ROI.</p>
+                <button class="cta-button">En savoir plus</button>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-image">
+                    <img src="/api/placeholder/150/150" alt="Agent IA Analytique" />
+                </div>
+                <h3 class="agent-name">Agent IA Analytique</h3>
+                <p class="agent-description">Transformez vos données en insights actionnables avec un agent qui analyse les tendances, prévoit les comportements et vous aide à prendre des décisions basées sur les données.</p>
+                <button class="cta-button">En savoir plus</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">Ce que nos clients disent</h2>
+        <p class="section-subtitle">Découvrez comment FutureIA a transformé des entreprises comme la vôtre.</p>
+        
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Depuis que nous avons intégré l'Agent IA Conversationnel, notre taux de conversion a augmenté de 47% et notre temps de réponse est passé de plusieurs heures à quelques secondes."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info">
+                        <span class="author-name">Sophie Martin</span>
+                        <span class="author-title">CMO, TechInnovate</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">"L'Agent IA Mailing a complètement transformé notre stratégie email. Nos taux d'ouverture ont doublé et nos ventes générées par email ont augmenté de 78% en seulement trois mois."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info">
+                        <span class="author-name">Thomas Dubois</span>
+                        <span class="author-title">CEO, GrowthRetail</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Grâce à l'Agent IA Analytique, nous avons identifié des opportunités de croissance que nous n'aurions jamais vues autrement. Notre ROI sur cette technologie a dépassé 500% la première année."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info">
+                        <span class="author-name">Lucie Moreau</span>
+                        <span class="author-title">Directrice Data, FinanceGroup</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="pricing" id="pricing">
+        <h2 class="section-title">Nos Offres</h2>
+        <p class="section-subtitle">Des solutions adaptées à chaque étape de votre croissance.</p>
+        
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3 class="pricing-header">Starter</h3>
+                <div class="pricing-price">299€ <span>/mois</span></div>
+                <ul class="pricing-features">
+                    <li>2 Agents IA au choix</li>
+                    <li>500 conversations/mois</li>
+                    <li>Support par email</li>
+                    <li>Intégration basique</li>
+                    <li>Rapports mensuels</li>
+                </ul>
+                <button class="pricing-button">Commencer</button>
+            </div>
+            
+            <div class="pricing-card featured">
+                <h3 class="pricing-header">Business</h3>
+                <div class="pricing-price">799€ <span>/mois</span></div>
+                <ul class="pricing-features">
+                    <li>4 Agents IA au choix</li>
+                    <li>2000 conversations/mois</li>
+                    <li>Support prioritaire</li>
+                    <li>Intégration avancée</li>
+                    <li>Rapports hebdomadaires</li>
+                    <li>Formation de l'équipe</li>
+                </ul>
+                <button class="pricing-button">Commencer</button>
+            </div>
+            
+            <div class="pricing-card">
+                <h3 class="pricing-header">Enterprise</h3>
+                <div class="pricing-price">Sur mesure</div>
+                <ul class="pricing-features">
+                    <li>Tous les Agents IA</li>
+                    <li>Volume illimité</li>
+                    <li>Accompagnement dédié</li>
+                    <li>Intégration complète</li>
+                    <li>Rapports personnalisés</li>
+                    <li>Formation avancée</li>
+                    <li>Agents IA personnalisés</li>
+                </ul>
+                <button class="pricing-button">Nous contacter</button>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer" id="contact">
+        <div class="footer-grid">
+            <div class="footer-info">
+                <div class="footer-logo">FutureIA</div>
+                <p>Transformez votre business avec l'intelligence artificielle de demain, disponible aujourd'hui.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Produits</h4>
+                <ul>
+                    <li><a href="#">Agent IA Conversationnel</a></li>
+                    <li><a href="#">Agent IA WhatsApp</a></li>
+                    <li><a href="#">Agent IA Mailing</a></li>
+                    <li><a href="#">Agent IA Vocal</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Entreprise</h4>
+                <ul>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Carrières</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Presse</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Ressources</h4>
+                <ul>
+                    <li><a href="#">Centre d'aide</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Études de cas</a></li>
+                    <li><a href="#">Webinaires</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="#">contact@futureia.com</a></li>
+                    <li><a href="#">+33 1 23 45 67 89</a></li>
+                    <li><a href="#">Paris, France</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 FutureIA. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
