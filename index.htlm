@@ -155,6 +155,10 @@
             height: 500px;
             border-radius: 20px;
             overflow: hidden;
+            background: linear-gradient(45deg, #333, #222);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .mission-text {
@@ -215,6 +219,11 @@
             height: 150px;
             margin: 0 auto 20px;
             position: relative;
+            background: linear-gradient(135deg, #333, #222);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .agent-name {
@@ -504,7 +513,7 @@
         
         <div class="mission-grid">
             <div class="mission-image">
-                <img src="/api/placeholder/600/500" alt="Notre vision du futur" />
+                <span style="color: #aaa; font-size: 20px;">Image: Notre vision du futur</span>
             </div>
             <div class="mission-text">
                 <h3>Pourquoi nous existons</h3>
@@ -522,7 +531,7 @@
         <div class="agents-grid">
             <div class="agent-card">
                 <div class="agent-image">
-                    <img src="/api/placeholder/150/150" alt="Agent IA Conversationnel" />
+                    <span style="color: #aaa; font-size: 14px;">IA Conversationnel</span>
                 </div>
                 <h3 class="agent-name">Agent IA Conversationnel</h3>
                 <p class="agent-description">Engagez vos clients 24/7 avec un assistant virtuel qui répond instantanément aux questions, résout les problèmes et convertit les prospects en clients.</p>
@@ -531,7 +540,7 @@
             
             <div class="agent-card">
                 <div class="agent-image">
-                    <img src="/api/placeholder/150/150" alt="Agent IA WhatsApp" />
+                    <span style="color: #aaa; font-size: 14px;">IA WhatsApp</span>
                 </div>
                 <h3 class="agent-name">Agent IA WhatsApp</h3>
                 <p class="agent-description">Offrez une expérience client exceptionnelle sur WhatsApp avec un agent qui comprend le contexte, répond naturellement et guide vos clients vers la conversion.</p>
@@ -540,7 +549,7 @@
             
             <div class="agent-card">
                 <div class="agent-image">
-                    <img src="/api/placeholder/150/150" alt="Agent IA Mailing" />
+                    <span style="color: #aaa; font-size: 14px;">IA Mailing</span>
                 </div>
                 <h3 class="agent-name">Agent IA Mailing</h3>
                 <p class="agent-description">Automatisez vos campagnes email avec un agent qui crée du contenu personnalisé, optimise les taux d'ouverture et adapte les messages selon le comportement des utilisateurs.</p>
@@ -549,7 +558,7 @@
             
             <div class="agent-card">
                 <div class="agent-image">
-                    <img src="/api/placeholder/150/150" alt="Agent IA Vocal" />
+                    <span style="color: #aaa; font-size: 14px;">IA Vocal</span>
                 </div>
                 <h3 class="agent-name">Agent IA Vocal</h3>
                 <p class="agent-description">Transformez votre service client avec un assistant vocal qui comprend les nuances de la conversation humaine et résout les problèmes sans intervention humaine.</p>
@@ -558,7 +567,7 @@
             
             <div class="agent-card">
                 <div class="agent-image">
-                    <img src="/api/placeholder/150/150" alt="Agent IA Marketing" />
+                    <span style="color: #aaa; font-size: 14px;">IA Marketing</span>
                 </div>
                 <h3 class="agent-name">Agent IA Marketing</h3>
                 <p class="agent-description">Générez du contenu optimisé pour les moteurs de recherche, créez des campagnes publicitaires performantes et analysez les données marketing pour maximiser votre ROI.</p>
@@ -567,7 +576,7 @@
             
             <div class="agent-card">
                 <div class="agent-image">
-                    <img src="/api/placeholder/150/150" alt="Agent IA Analytique" />
+                    <span style="color: #aaa; font-size: 14px;">IA Analytique</span>
                 </div>
                 <h3 class="agent-name">Agent IA Analytique</h3>
                 <p class="agent-description">Transformez vos données en insights actionnables avec un agent qui analyse les tendances, prévoit les comportements et vous aide à prendre des décisions basées sur les données.</p>
